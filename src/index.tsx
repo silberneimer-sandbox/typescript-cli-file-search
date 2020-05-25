@@ -76,6 +76,13 @@ async function fetchItems(path: string): Promise<Array<Item>> {
     }))
 }
 
+/**
+ * 複数の無視条件から対象が該当するか検査する
+ * 複数の条件の中1件でも当てはまる場合は無視の対象とする
+ * @param ignoreItems 複数の無視条件
+ * @param target 判定対象
+ * @param shouldIgnoreFilter 無視判定を実施する関数
+ */
 function shouldIgnore<T, S>(
     ignoreItems: Array<T>, 
     target: S, 
